@@ -49,3 +49,15 @@ repos:
     hooks:
       - id: mypy
     additional_dependencies: [ types-pyyaml ]
+  - repo: local
+    hooks:
+      - id: xenon
+        name: xenon
+        entry: ./run_xenon.sh
+        language: script
+        types: [ python ]
+      - id: radon
+        name: radon
+        entry: ./run_radon.sh
+        language: script
+        types: [ python ]
