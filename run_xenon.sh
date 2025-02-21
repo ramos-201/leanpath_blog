@@ -1,2 +1,2 @@
-#!/usr/bin/env bash
+#!/bin/bash
 xenon -b D -m D -a A .
