@@ -1,6 +1,6 @@
 import uvicorn
 
-from src import config
+from src import configs
 
 
 if __name__ == '__main__':
@@ -8,6 +8,6 @@ if __name__ == '__main__':
         'src.main:app',
         host='0.0.0.0',
         port=8000,
-        reload=config.DEV,
+        reload=configs.DEV,
         loop='uvloop',
     )

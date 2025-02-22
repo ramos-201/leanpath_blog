@@ -1,5 +1,9 @@
 .env
 
-.idea
+package-lock.json
+node_modules/
+src/static/output.css
+
+.idea/
 
 *pyc
