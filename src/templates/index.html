@@ -1,138 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./static/output.css" rel="stylesheet">
-  <title>lean_path</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap');
+{% extends "_base.html" %}
 
-    body {
-       font-family: "Markazi Text", serif;
-      line-height: normal;
-      letter-spacing: -0.03em;
-      background-color: #F3F0EA;
-      color: #16130C
-    }
-  </style>
-</head>
-<body class="flex flex-col flex-row min-h-screen">
-  <div class="w-full max-w-4xl min-h-screen mx-auto flex flex-col text-justify">
-    <header class="pt-6 md:pt-12 ml-2 mr-4">
-      <h1 class="text-4xl md:text-5xl leading-9 font-bold italic">
-        leanPath
-      </h1>
-      <div class="border-b-2 mt-2 md:mt-4"></div>
-    </header>
-    <main class="md:mt-4 ml-2 mr-4">
-      <div class="mt-4">
-        <h2 class="text-3xl md:text-4xl font-bold">
-          About the blog
-        </h2>
-        <p class="text-xl mt-1">
-          <span class="text-xl font-bold">leanPath </span>is a personal blog that serves as a knowledge notebook on
-          software development, built on a philosophy of simplicity and efficiency. This space explores topics such as
-          programming, software design, clean code, task automation, software testing, design patterns, optimization,
-          and other key aspects of building solid, clear, and maintainable software.
-        </p>
-        <p class="text-xl mt-1">
-          More than just a repository of notes or a collection of information,
-          <span class="text-xl font-bold">leanPath </span> aims to be a space for exploration and knowledge
-          refinement. Its purpose is to organize, connect, and delve into key concepts, structuring ideas in a clear
-          and practical way to enhance their understanding and real-world application. The name represents the idea
-          of following an efficient, well-defined path focused on the essentials. More than just storing information,
-          <span class="text-xl font-bold">leanPath </span> strives to be a valuable tool for learning and knowledge
-          sharing, providing access to fundamental principles and best practices in software development.
-        </p>
-        <p class="text-xl mt-1">
-          <span class="text-2xl font-bold">Language: </span> This blog will be written in English. Although I still
-          have limited practice, I recognize that English is fundamental in the field of software development.
-          Writing in English will not only help me improve my proficiency but also allow me to share knowledge with
-          a broader audience within the tech community.
-        </p>
-        <p class="text-xl mt-1">
-          Find out more
-          <a href="#" class="text-2xl font-bold italic text-[#2177CF] hover:underline">
-            About me
-          </a>
-        </p>
-        <p class="text-xl text-justify font-bold p-1 mt-2">
-          leanPath is a constantly evolving space, where each entry contributes to structuring and consolidating
-          knowledge. It is not just about documentation but about shaping ideas that lead to better, clearer,
-          and more efficient systems.
-        </p>
-        <h3 class="text-2xl md:text-3xl font-bold">
-          Topics covered
-        </h3>
-        <ul class="list-disc text-xl ml-8">
-          <li class="">
-            Clean Code – Writing maintainable and readable code.
-          </li>
-          <li class="">
-            Software Design – Patterns and best practices.
-          </li>
-          <li class="">
-            Automation – Reducing repetitive tasks.
-          </li>
-          <li class="">
-            Optimization – Writing efficient code.
-          </li><li class="">
-            Testing – Ensuring long-term stability.
-          </li>
-        </ul>
-        <p class="text-xl mt-1">
-          Explore the
-          <a href="#" class="text-2xl font-bold italic text-[#2177CF] hover:underline">
-            Posts
-          </a>
-        </p>
-      </div>
-      <div class="mt-4">
-        <h2 class="text-3xl md:text-4xl font-bold">
-          Ideology of leanPath
-        </h2>
-        <p class="text-xl mt-1">
-          leanPath is based on clarity, efficiency, and the structured organization of knowledge and information.
-        </p>
-        <p class="text-xl mt-1">
-          Its name combines two key concepts:
-        </p>
-        <ul class="list-disc text-xl ml-8">
-          <li class="">
-            <span class="text-2xl font-bold">lean: </span>Represents a minimalist and efficient approach, avoiding
-            the unnecessary and prioritizing simplicity. Inspired by Lean philosophy, it focuses on eliminating waste
-            and optimizing each process so that every element serves its purpose effectively.
-          </li>
-          <li class="">
-            <span class="text-2xl font-bold">Path: </span>Symbolizes a well-defined path, a clear direction toward
-            structured and understandable solutions. It’s not just about moving forward but doing so with purpose and
-            precision, ensuring that every piece fits exactly where it should.
-          </li>
-        </ul>
-        <p class="text-xl mt-1">
-          The ideology of leanPath is built on simple and clear organization, avoiding unnecessary complexities and
-          promoting well-defined principles that help develop cleaner, more maintainable, and efficient software.
-        </p>
-        <p class="text-xl mt-1">
-          The approach is straightforward: <span class="text-xl font-bold">reduce noise, prioritize clarity, and
-          optimize each component to do exactly what it should.</span>
-        </p>
-      </div>
+{% block title %}
+  leanPath
+{% endblock %}
 
+{% block content %}
+  {% call comp.section_block() %}
+    {{ comp.h2("About the blog") }}
+    {{ comp.p(
+      comp.span("leanPath ") ~
+      "is a personal blog that serves as a knowledge notebook on software development, built on a philosophy of
+      simplicity and efficiency. This space explores topics such as programming, software design, clean code, task
+      automation, software testing, design patterns, optimization, and other key aspects of building solid, clear,
+      and maintainable software."
+    ) }}
+    {{ comp.p(
+      "More than just a repository of notes or a collection of information," ~
+      comp.span("leanPath ") ~
+      "aims to be a space for exploration and knowledge refinement. Its purpose is to organize, connect, and delve
+      into key concepts, structuring ideas in a clear and practical way to enhance their understanding and
+      real-world application. The name represents the idea of following an efficient, well-defined path focused on
+      the essentials. More than just storing information," ~
+      comp.span("leanPath ") ~
+      "strives to be a valuable tool for learning and knowledge sharing, providing access to fundamental principles
+      and best practices in software development."
+    ) }}
+    {{ comp.p(
+      comp.span_2("Language: ") ~
+      "This blog will be written in English. Although I still have limited practice, I recognize that English is
+      fundamental in the field of software development. Writing in English will not only help me improve my
+      proficiency but also allow me to share knowledge with a broader audience within the tech community."
+    ) }}
+    {{ comp.p(
+      "Find out more" ~
+      comp.a("About me", "#", True),
+    ) }}
+    {{ comp.p_font_bold(
+      "leanPath is a constantly evolving space, where each entry contributes to structuring and consolidating
+      knowledge. It is not just about documentation but about shaping ideas that lead to better, clearer, and more
+      efficient systems."
+    ) }}
+    {{ comp.h3("Topics covered") }}
+    {{ comp.list_items([
+      comp.span("Clean Code ") ~ "– Writing maintainable and readable code.",
+      comp.span("Software Design ") ~ "– Patterns and best practices.",
+      comp.span("Automation ") ~ "– Reducing repetitive tasks.",
+      comp.span("Optimization ") ~ "– Writing efficient code.",
+      comp.span("Testing ") ~ "– Ensuring long-term stability."
+    ])}}
+    {{ comp.p(
+      "Explore the" ~
+      comp.a("Posts", "#", True),
+    ) }}
+  {% endcall %}
+  {% call comp.section_block() %}
+    {{ comp.h2("Ideology of leanPath") }}
+    {{ comp.p(
+      "leanPath is based on clarity, efficiency, and the structured organization of knowledge and information."
+    ) }}
+    {{ comp.p(
+      "Its name combines two key concepts:"
+    ) }}
+    {{ comp.list_items([
+      comp.span_2("lean:") ~ "Represents a minimalist and efficient approach, avoiding the unnecessary and
+      prioritizing simplicity. Inspired by Lean philosophy, it focuses on eliminating waste and optimizing each
+      process so that every element serves its purpose effectively.",
 
-    </main>
-
-    <footer class="w-full mt-auto my-4">
-      <div class="border-b-2 mt-4 md:mt-6"></div>
-      <div class="text-2xl md:text-3xl space-x-4 justify-center font-bold flex mt-2 md:mt-4">
-        <a href="#" class="inline-flex hover:text-[#572022]">About Me</a>
-        <span class="inline-flex">|</span>
-        <a href="#" class="inline-flex hover:text-[#572022]">leanPath</a>
-        <span class="inline-flex">|</span>
-        <a href="#" class="inline-flex hover:text-[#572022]">Posts</a>
-      </div>
-    </footer>
-</div>
-</body>
-</html>
+      comp.span_2("Path:") ~ "Symbolizes a well-defined path, a clear direction toward structured and
+      understandable solutions. It’s not just about moving forward but doing so with purpose and precision,
+      ensuring that every piece fits exactly where it should."
+    ])}}
+    {{ comp.p(
+      "The ideology of leanPath is built on simple and clear organization, avoiding unnecessary complexities and
+      promoting well-defined principles that help develop cleaner, more maintainable, and efficient software."
+    ) }}
+    {{ comp.p(
+      "The approach is straightforward:" ~ comp.span("reduce noise, prioritize clarity, and optimize each component
+      to do exactly what it should.")
+    ) }}
+  {% endcall %}
+{% endblock %}

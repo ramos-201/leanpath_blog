@@ -1,0 +1,65 @@
+{% macro h1(txt) %}
+  <h1 class="text-4xl md:text-5xl leading-9 font-bold italic">
+    {{ txt }}
+  </h1>
+{% endmacro %}
+
+{% macro h2(txt) %}
+  <h2 class="text-3xl md:text-4xl font-bold">
+    {{ txt }}
+  </h2>
+{% endmacro %}
+
+{% macro h3(txt) %}
+  <h3 class="text-2xl md:text-3xl font-bold">
+    {{ txt }}
+  </h3>
+{% endmacro %}
+
+{% macro p(txt) %}
+  <p class="text-xl mt-1">
+    {{ txt }}
+  </p>
+{% endmacro %}
+
+{% macro p_font_bold(txt) %}
+  <p class="text-xl text-justify font-bold p-1 mt-2">
+    {{ txt }}
+  </p>
+{% endmacro %}
+
+{% macro span(txt) %}
+  <span class="text-xl font-bold">
+    {{ txt }}
+  </span>
+{% endmacro %}
+
+{% macro span_2(txt) %}
+  <span class="text-2xl font-bold">
+    {{ txt }}
+  </span>
+{% endmacro %}
+
+{% macro a(txt, link, new_tab=False) %}
+  <a
+    href="{{ link }}"
+    class="text-2xl font-bold italic text-[#2177CF] hover:underline"
+    {% if new_tab %} target="_blank" rel="noopener noreferrer" {% endif %}
+  >
+    {{ txt }}
+  </a>
+{% endmacro %}
+
+{% macro list_items(items) %}
+  <ul class="list-disc text-xl ml-8">
+    {% for item in items %}
+      <li>{{ item }}</li>
+    {% endfor %}
+  </ul>
+{% endmacro %}
+
+{% macro section_block() %}
+  <div class="mt-4">
+    {{ caller() }}
+  </div>
+{% endmacro %}

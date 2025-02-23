@@ -1,1 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap');
+
 @import "tailwindcss";
+
+:root {
+  --color-first: #F3F0EA;
+  --color-second: #16130C;
+  --color-third: #572022;
+}
+
+body {
+  font-family: "Markazi Text", serif;
+  line-height: normal;
+  letter-spacing: -0.03em;
+  background-color: var(--color-first);
+  color: var(--color-second);
+}
+
+footer a:hover {
+  color: var(--color-third);
+}
