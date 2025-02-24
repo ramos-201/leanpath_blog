@@ -33,7 +33,7 @@
     ) }}
     {{ comp.p(
       "Find out more" ~
-      comp.a("About me", "#", True),
+      comp.a("About me", "/about_me", False),
     ) }}
     {{ comp.p_font_bold(
       "leanPath is a constantly evolving space, where each entry contributes to structuring and consolidating
@@ -50,7 +50,7 @@
     ])}}
     {{ comp.p(
       "Explore the" ~
-      comp.a("Posts", "#", True),
+      comp.a("Posts", "#", False),
     ) }}
   {% endcall %}
   {% call comp.section_block() %}

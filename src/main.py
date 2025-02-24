@@ -13,9 +13,14 @@ async def index(request):
     return templates.TemplateResponse('index.html', {'request': request})
 
 
+async def about_me(request):
+    return templates.TemplateResponse('about_me.html', {'request': request})
+
+
 app = Starlette(
     routes=[
         Route('/', index),
+        Route('/about_me', about_me),
     ],
     debug=configs.DEV,
 )

@@ -1,0 +1,74 @@
+{% extends "_base.html" %}
+
+{% block title %}
+  About Me
+{% endblock %}
+
+{% block content %}
+  {% call comp.section_block() %}
+    <div class="flex flex-col">
+      <div class="w-60 h-60 rounded-full overflow-hidden border-2 root-border-color mt-8 mb-2">
+        <img src="/static/img/me.png" alt="andres ramos dev" class="w-full h-full object-cover">
+      </div>
+    </div>
+  {% endcall %}
+
+  {% call comp.section_block() %}
+    {{ comp.h2("I'm, Andres Ramos") }}
+    {{ comp.h3("Software Developer") }}
+    <div class="flex space-x-3">
+      <a href="https://www.linkedin.com/in/andresramos-developer/" class="" target="_blank">
+        <i class="fab fa-linkedin w-8 h-8 text-3xl"></i>
+      </a>
+      <a href="mailto:andfera201@gmail.com?subject=Hi, Andres/" class="" target="_blank">
+        <i class="fas fa-envelope w-8 h-8 text-3xl"></i>
+      </a>
+      <a href="https://github.com/ramos-201/" class="" target="_blank">
+        <i class="fab fa-github w-8 h-8 text-3xl"></i>
+      </a>
+    </div>
+    {{ comp.p(
+      "I am a software developer specializing in backend development, always aiming to create high-quality solutions
+      that are easy to understand, develop, and maintain. My focus is on optimizing performance, simplifying processes,
+      and ensuring the code is clean and scalable. I enjoy tackling technical challenges, constantly looking for ways
+      to make software more efficient, functional, and sustainable. My goal is for every project to not only meet its
+      requirements but also be prepared to evolve over time in an agile and uncomplicated way."
+    ) }}
+    {{ comp.h3("Interests") }}
+     {{ comp.list_items([
+      "Clean and maintainable code.",
+      "Code testing.",
+      "Design patterns.",
+      "Continuous refactoring.",
+      "Automation of repetitive tasks.",
+      "Best practices in software development.",
+      "Object-oriented programming.",
+      "Problem analysis and resolution."
+    ]) }}
+    {{ comp.p(
+      "Explore the" ~
+      comp.a("Posts", "#", True),
+    ) }}
+  {% endcall %}
+
+  {% call comp.section_block() %}
+    {{ comp.h2("My personality") }}
+    {{ comp.p(
+      "I am driven by curiosity and a constant desire to learn. I am passionate about challenges and enjoy exploring
+      different ways to approach a problem, analyzing each option from multiple perspectives to find the most
+      efficient and clear solution. I don’t settle for just one way of doing things; I research, experiment,
+      and refine, extracting the best from each approach to anticipate potential issues and enhance every aspect
+      of my work."
+    ) }}
+    {{ comp.p(
+      "I deeply value simplicity—not as a shortcut or lack of effort, but as the art of structuring everything in
+      its right place with purpose and clarity. To me, good design—whether in software or any other field—should
+      speak for itself, free of confusion and unnecessary complexity. Clarity is essential because it ensures that
+      others can easily understand and interpret what has been built."
+    ) }}
+    {{ comp.p(
+      "I always strive to make my work efficient, comprehensible, and well-structured, because I believe the best
+      solution is not just the one that works, but the one that can evolve without complications."
+    ) }}
+  {% endcall %}
+{% endblock %}
