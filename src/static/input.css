@@ -3,9 +3,9 @@
 @import "tailwindcss";
 
 :root {
-  --color-first: #F3F0EA;
-  --color-second: #16130C;
-  --color-third: #572022;
+  --color-first: #F7F5F5;
+  --color-second: #202020;
+  --color-third: #741718;
 }
 
 body {
@@ -18,4 +18,8 @@ body {
 
 footer a:hover {
   color: var(--color-third);
+}
+
+main a {
+  color: #2177CF;
 }
